@@ -51,10 +51,10 @@ public class AuthorizationCli extends BaseCli {
     @Override
     protected void printMenu() {
         System.out.println("\n===== ВХОД =====");
-        System.out.println("1. Помощь");
-        System.out.println("2. Зарегистрироваться");
-        System.out.println("3. Войти");
-        System.out.println("0. Завершить работу");
+        System.out.println("1.  Помощь");
+        System.out.println("2.  Зарегистрироваться");
+        System.out.println("3.  Войти");
+        System.out.println("0.  Завершить работу");
         System.out.print("Введите ваш выбор: ");
     }
 
