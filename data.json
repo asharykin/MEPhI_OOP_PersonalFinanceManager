@@ -1,0 +1,68 @@
+{
+  "categories_incomes": [
+    {
+      "id": 1,
+      "name": "Зарплата"
+    },
+    {
+      "id": 2,
+      "name": "Бонус"
+    }
+  ],
+  "categories_expenses": [
+    {
+      "id": 1,
+      "name": "Еда",
+      "budget": 4000
+    },
+    {
+      "id": 2,
+      "name": "Развлечения",
+      "budget": 3000
+    },
+    {
+      "id": 3,
+      "name": "Коммунальные услуги",
+      "budget": 2500
+    }
+  ],
+  "operations_incomes": [
+    {
+      "id": 1,
+      "amount": 20000,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "amount": 40000,
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "amount": 3000,
+      "category_id": 2
+    }
+  ],
+  "operations_expenses": [
+    {
+      "id": 1,
+      "amount": 300,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "amount": 500,
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "amount": 3000,
+      "category_id": 2
+    },
+    {
+      "id": 4,
+      "amount": 3000,
+      "category_id": 3
+    }
+  ]
+}
