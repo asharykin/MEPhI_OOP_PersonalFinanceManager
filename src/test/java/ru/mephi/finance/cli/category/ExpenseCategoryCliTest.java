@@ -45,6 +45,7 @@ class ExpenseCategoryCliTest {
         assertDoesNotThrow(() -> expenseCategoryCli.listCategories());
         verify(categoryService).getAllEntities();
     }
+
     @Test
     void listCategories_ShouldThrowException_WhenEmpty() {
         when(categoryService.getAllEntities()).thenReturn(Collections.emptyList());
@@ -58,6 +59,7 @@ class ExpenseCategoryCliTest {
 
         verify(categoryService).createCategory("Такси", new BigDecimal("150.00"));
     }
+
     @Test
     void updateCategory_ShouldUpdateBothNameAndBudget() {
         ExpenseCategory category = new ExpenseCategory();
@@ -75,6 +77,7 @@ class ExpenseCategoryCliTest {
         assertEquals("Новая", category.getName());
         assertEquals(new BigDecimal("200.00"), category.getBudget());
     }
+
     @Test
     void deleteCategory_ShouldCallService_WhenConfirmed() {
         ExpenseCategory category = new ExpenseCategory();
