@@ -68,6 +68,7 @@ class ExpenseOperationCliTest {
             verify(operationService).createOperation(cat, new BigDecimal("100.00"));
         }
     }
+
     @Test
     void addOperation_ShouldAbort_WhenBudgetExceededAndUserSaysNo() {
         ExpenseCategory cat = new ExpenseCategory();

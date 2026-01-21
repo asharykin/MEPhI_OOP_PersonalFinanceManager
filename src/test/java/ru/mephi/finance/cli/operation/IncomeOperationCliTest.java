@@ -37,6 +37,7 @@ class IncomeOperationCliTest {
         Scanner scanner = new Scanner(new ByteArrayInputStream(input.getBytes()));
         incomeOperationCli.setScanner(scanner);
     }
+
     @Test
     void addOperation_SimpleSuccess() {
         IncomeCategory cat = new IncomeCategory();
@@ -49,6 +50,7 @@ class IncomeOperationCliTest {
 
         verify(operationService).createOperation(cat, new BigDecimal("1000.00"));
     }
+
     @Test
     void getOperationSumByCategories_AllCategories() {
         IncomeCategory cat = new IncomeCategory();
@@ -62,6 +64,7 @@ class IncomeOperationCliTest {
 
         verify(operationService).getSumByCategory(cat);
     }
+
     @Test
     void getOperationSumByCategories_SpecificId() {
         IncomeCategory cat = new IncomeCategory();

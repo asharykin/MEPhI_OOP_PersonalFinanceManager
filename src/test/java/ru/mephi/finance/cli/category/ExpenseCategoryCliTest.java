@@ -52,6 +52,7 @@ class ExpenseCategoryCliTest {
 
         assertThrows(NoSuchElementException.class, () -> expenseCategoryCli.listCategories());
     }
+
     @Test
     void addCategory_ShouldCallServiceWithCorrectParams() {
         provideInput("Такси\n150.00\n");

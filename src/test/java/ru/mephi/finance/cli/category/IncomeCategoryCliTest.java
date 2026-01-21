@@ -42,6 +42,7 @@ class IncomeCategoryCliTest {
         assertDoesNotThrow(() -> incomeCategoryCli.listCategories());
         verify(categoryService).getAllEntities();
     }
+
     @Test
     void listCategories_ShouldThrowException_WhenNoCategoriesFound() {
         when(categoryService.getAllEntities()).thenReturn(Collections.emptyList());
@@ -50,6 +51,7 @@ class IncomeCategoryCliTest {
                 () -> incomeCategoryCli.listCategories());
         assertTrue(exception.getMessage().contains("Никаких доходных категорий не найдено"));
     }
+
     @Test
     void addCategory_ShouldCallServiceWithNullBudget() {
         provideInput("Фриланс\n");
@@ -57,6 +59,7 @@ class IncomeCategoryCliTest {
 
         verify(categoryService).createCategory("Фриланс", null);
     }
+
     @Test
     void updateCategory_ShouldOnlyUpdateName() {
         IncomeCategory category = new IncomeCategory();
@@ -72,6 +75,7 @@ class IncomeCategoryCliTest {
         verify(categoryService).checkCategoryName("Новое имя");
         assertEquals("Новое имя", category.getName());
     }
+
     @Test
     void updateCategory_ShouldDoNothing_WhenUserSaysNo() {
         IncomeCategory category = new IncomeCategory();
@@ -87,6 +91,7 @@ class IncomeCategoryCliTest {
         verify(categoryService, never()).checkCategoryName(anyString());
         assertEquals("Постоянное имя", category.getName());
     }
+
     @Test
     void deleteCategory_ShouldCallServiceWithCorrectId() {
         IncomeCategory category = new IncomeCategory();
