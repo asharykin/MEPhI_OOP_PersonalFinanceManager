@@ -47,7 +47,6 @@ class AuthorizationCliTest {
         provideInput("\n");
 
         assertThrows(IllegalArgumentException.class, () -> authorizationCli.register());
-
         verify(userService, never()).createUser(anyString(), anyString());
     }
 }
