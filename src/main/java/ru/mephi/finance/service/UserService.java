@@ -78,9 +78,9 @@ public class UserService extends EntityService<User> {
 
         if (isUserAuthorized()) {
             migratingServices.forEach(ImportingService::loadData);
-        } else {
-            throw new NoSuchElementException("Пользователя с такими учётными данными не существует.");
+            return;
         }
+        throw new NoSuchElementException("Пользователя с такими учётными данными не существует.");
     }
 
     public void deauthorize() {

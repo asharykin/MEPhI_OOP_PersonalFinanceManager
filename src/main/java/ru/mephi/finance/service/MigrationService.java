@@ -43,13 +43,13 @@ public class MigrationService {
                     service.deleteAllEntities();
                     service.importData(node);
                 });
+                return;
             } catch (IOException e) {
                 migratingServices.forEach(EntityService::deleteAllEntities);
                 String message = "Ошибка во время парсинга файла с данными. Убедитесь, что его структура корректна.";
                 throw new RuntimeException(message, e);
             }
-        } else {
-            throw new IllegalArgumentException("По данному пути файла не обнаружено.");
         }
+        throw new IllegalArgumentException("По данному пути файла не обнаружено.");
     }
 }
